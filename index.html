@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Оптимізація розрахунку букетів</title>
+        <script src="https://unpkg.com/javascript-lp-solver/prod/solver.js"></script>
+        <script src="main.js" defer></script>
+        
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <ul class="header-list">
+                <li class="header-item header-item-1">
+                    <h1 class="header-title">Оптимізація процесу розрахунку складу квіткових букетів</h1>
+                </li>
+                <li class="header-item header-item-2">
+                    <a href="howItWorks.html">
+                        <h2>Як це працює?</h2>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+
+            <hr noshade class="hr-top">
+            <form id="lpForm">
+                <label for="targetFunction">Кошти на букет: </label>
+                <input type="number" id="targetFunction" name="targetFunction" required><br>
+                <label for="numFlowerTypes">Кількість видів квіток: </label>
+                <input type="number" id="numFlowerTypes" name="numFlowerTypes" min="2" readonly required value="2">
+                <button type="button" id="increaseFlowerTypes">+1</button>
+                <button type="button" id="decreaseFlowerTypes">-1</button>
+                <button type="button" id="invalidationFlowerTypes">2</button>
+
+                <div id="flowerPrices"></div>
+
+                <button type="submit">Знайти оптимальний букет</button>
+            </form>
+
+            <div id="results" class="results-container"></div>
+
+            <hr noshade class="hr-bot">
+        </div>
+    </main>
+</body>
+
+</html>
